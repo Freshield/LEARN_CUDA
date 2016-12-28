@@ -3,48 +3,72 @@
 #include "device_launch_parameters.h"
 
 #include "C:\cuda_by_example\common\book.h"
+#include "C:\cuda_by_example\common\cpu_bitmap.h"
 
 #include <stdio.h>
 
-#define N 1000
+#define DIM 1000
 
-__global__ void add(int *a, int *b, int *c) {
-	int tid = blockIdx.x;
-	if (tid < N)
+struct cuComplex {
+	float r;
+	float i;
+	cuComplex(float a, float b) : r(a), i(b){}
+	float magnitude2(void) {
+		return r * r + i * i;
+	}
+	cuComplex operator*(const cuComplex& a) {
+		return cuComplex(r*a.r - i*a.i, i*a.r + r*a.i);
+	}
+	cuComplex operator+(const cuComplex& a) {
+		return cuComplex(r + a.r, i + a.i);
+	}
+};
+
+int julia(int x, int y) {
+	const float scale = 1.5;
+	float jx = scale * (float)(DIM / 2 - x) / (DIM / 2);
+	float jy = scale * (float)(DIM / 2 - y) / (DIM / 2);
+
+	cuComplex c(-0.8, 0.156);
+	cuComplex a(jx, jy);
+
+	int i = 0;
+	for (int i = 0; i < 200; i++)
 	{
-		c[tid] = a[tid] + b[tid];
+		a = a * a + c;
+		if (a.magnitude2() > 1000)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+void kernel(unsigned char *ptr) {
+	for (int y = 0; y < DIM; y++)
+	{
+		for (int x = 0; x < DIM; x++)
+		{
+			int offset = x + y * DIM;
+
+			int juliaValue = julia(x, y);
+			ptr[offset * 4 + 0] = 255 * juliaValue;
+			ptr[offset * 4 + 1] = 0;
+			ptr[offset * 4 + 2] = 0;
+			ptr[offset * 4 + 3] = 255;
+		}
 	}
 }
 
+
 int main()
 {
-	int a[N], b[N], c[N];
-	int *dev_a, *dev_b, *dev_c;
+	CPUBitmap bitmap(DIM, DIM);
 
-	HANDLE_ERROR(cudaMalloc((void**)&dev_a, N * sizeof(int)));
-	HANDLE_ERROR(cudaMalloc((void**)&dev_b, N * sizeof(int)));
-	HANDLE_ERROR(cudaMalloc((void**)&dev_c, N * sizeof(int)));
+	unsigned char *ptr = bitmap.get_ptr();
 
-	for (int i = 0; i < N; i++)
-	{
-		a[i] = -i;
-		b[i] = i * i;
-	}
+	kernel(ptr);
 
-	HANDLE_ERROR(cudaMemcpy(dev_a, a, N * sizeof(int), cudaMemcpyHostToDevice));
-	HANDLE_ERROR(cudaMemcpy(dev_b, b, N * sizeof(int), cudaMemcpyHostToDevice));
-
-	add << <N, 1 >> > (dev_a, dev_b, dev_c);
-
-	HANDLE_ERROR(cudaMemcpy(c, dev_c, N * sizeof(int), cudaMemcpyDeviceToHost));
-
-	for (int i = 0; i < N; i++)
-	{
-		printf("%d + %d = %d\n", a[i], b[i], c[i]);
-	}
-
-	cudaFree(dev_a);
-	cudaFree(dev_b);
-	cudaFree(dev_c);
+	bitmap.display_and_exit();
 
 }
