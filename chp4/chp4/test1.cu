@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-#define N 500
+#define N 5000
 
 __global__ void add(int *a, int *b, int *c) {
 	int tid = blockIdx.x;
