@@ -24,3 +24,4 @@
 *.depend
 *.xml
 *.tree
+*.opendb
