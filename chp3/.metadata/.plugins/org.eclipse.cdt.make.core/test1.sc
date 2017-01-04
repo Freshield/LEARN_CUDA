@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910;com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910.;nvcc.compiler.base.882207535;nvcc.compiler.input.cu.367879021">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773;com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773.;nvcc.compiler.base.1780379899;nvcc.compiler.input.cpp.1810141222">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
@@ -289,7 +289,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910;com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910.;nvcc.compiler.base.882207535;nvcc.compiler.input.cpp.1042464437">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773;com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773.;nvcc.compiler.base.1780379899;nvcc.compiler.input.cu.595268709">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
@@ -578,7 +578,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910;com.nvidia.cuda.ide.eight_zero.configuration.debug.1983974910.;nvcc.compiler.base.882207535;nvcc.compiler.input.c.1488938429">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773;com.nvidia.cuda.ide.eight_zero.configuration.debug.1731297773.;nvcc.compiler.base.1780379899;nvcc.compiler.input.c.556289519">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
@@ -867,7 +867,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212;com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212.;nvcc.compiler.base.622656487;nvcc.compiler.input.c.1159721043">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833;com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833.;nvcc.compiler.base.711778995;nvcc.compiler.input.cpp.1189463187">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
@@ -1144,7 +1144,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212;com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212.;nvcc.compiler.base.622656487;nvcc.compiler.input.cpp.1580756279">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833;com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833.;nvcc.compiler.base.711778995;nvcc.compiler.input.c.1343675426">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
@@ -1421,7 +1421,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212;com.nvidia.cuda.ide.eight_zero.configuration.release.1625080212.;nvcc.compiler.base.622656487;nvcc.compiler.input.cu.115775882">
+<instance id="com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833;com.nvidia.cuda.ide.eight_zero.configuration.release.1510646833.;nvcc.compiler.base.711778995;nvcc.compiler.input.cu.800856349">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-8.0/bin/..//include"/>
 <includePath path="/usr/include/c++/5"/>
