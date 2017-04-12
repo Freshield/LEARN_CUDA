@@ -9,7 +9,7 @@
  */
 #include <stdio.h>
 
-#define N 10
+#define N 100
 
 void add(int *a, int *b, int *c){
 	int tid = 0;
