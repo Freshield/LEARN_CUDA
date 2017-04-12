@@ -42,6 +42,7 @@ int main(){
 	add<<<1,1>>>(2, 7, dev_c);
 
 	cudaMemcpy(&c, dev_c, sizeof(int), cudaMemcpyDeviceToHost);
+	//from the memory where dev_c point to the memory address of c
 
 	cudaFree(dev_c);
 
