@@ -9,10 +9,10 @@
  */
 #include <stdio.h>
 
-#include "/media/freshield/BUFFER/LEARN_CUDA/cuda_by_example/common/book.h"
-#include "/media/freshield/BUFFER/LEARN_CUDA/cuda_by_example/common/cpu_bitmap.h"
+#include "../../common/book.h"
+#include "../../common/cpu_bitmap.h"
 
-#define DIM 100
+#define DIM 1000
 
 void kernel(unsigned char *ptr);
 int julia(int x, int y);
